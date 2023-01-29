@@ -1,2 +1,2 @@
-# -
+# git_securityspec
 example
