@@ -1,0 +1,151 @@
+ // 获取后台数据  拼接时在所有的upload前面加上http://mirror.aqydt.cn:8072/ydt1.5
+ $(document).ready(function() {
+            $.ajax({
+                url: "JSON2.json", //同文件夹下的json文件路径
+                type: "GET", //请求方式为get
+                dataType: "json", //返回数据格式为json
+                // contentType: "application/json;charset=UTF-8",
+                success: function(data) { //请求成功完成后要执行的方法 
+                    // 留言人头像1
+                    // 获取第一个头像的div
+                    var $firstAvatar = $("#first_avatar");
+                    // 存储数据的变量 
+                    var str1 = "";
+                    // 清空内容 
+                    $firstAvatar.empty();
+                    str1 = `<img  class="avatar" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].header + `" alt="">`;
+                    $firstAvatar.html(str1);
+
+                    // 留言人昵称2
+                    var $firstName = $("#message_head_name");
+                    var str2 = "";
+                    $firstName.empty();
+                    str2 = `<span>` + data.data[0].nickname + `</span>`;
+                    $firstName.html(str2);
+
+                    // 留言时间3
+                    var $firstTime = $("#message_head_time");
+                    var str3 = "";
+                    $firstTime.empty();
+                    str3 = `<span>` + data.data[0].timestamp + `</span>`;
+                    $firstTime.html(str3);
+                    // 留言内容4
+                    var $firstContent = $("#message_content_word");
+                    var str4 = "";
+                    $firstContent.empty();
+                    str4 = data.data[0].contents;
+                    $firstContent.html(str4);
+
+                    // 留言图片5
+                    var $firstPhoto = $("#message_content_img");
+                    var str5 = "";
+                    var firstImgurlLength = data.data[0].imageUrl.length;
+                    switch (firstImgurlLength) {
+                        case 1:
+                            str5 = `<img id="message_content_imgs" class="message_content_imgs one" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].imageUrl[0] + `" alt="">`;
+                            $firstPhoto.html(str5);
+                            break;
+                        case 2:
+                            for (var i = 0; i < 2; i++) {
+                                str5 += `<img id="message_content_imgs"  class="message_content_imgs two" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].imageUrl[i] + `" alt="">`;
+                            }
+                            $firstPhoto.html(str5);
+                            break;
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            for (var i = 0; i < firstImgurlLength; i++) {
+                                str5 += `<img id="message_content_imgs"  class="message_content_imgs three" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].imageUrl[i] + `" alt="">`;
+                            }
+                            $firstPhoto.html(str5);
+                            break;
+                        default:
+                            str5 = "";
+                            $firstPhoto.html(str5);
+                    }
+                    // 评论回复数量6
+                    var $contentAmount = $("#message_content_amount");
+                    var str6 = "";
+                    $contentAmount.empty();
+                    str6 = data.data.length - 1;
+                    $contentAmount.html(str6);
+                    // 留言评论7
+                    var $comments = $("#comments");
+                    var dataLength = data.data.length;
+                    switch (dataLength) {
+                        // 没有评论，隐藏框框
+                        case 1:
+                            $comments.css('display', 'none');
+                            break;
+                            // 有评论，利用JSON的内容拼接标签
+                        default:
+                            // 评论头像
+                            var $userAvatar = $("#user_avatar"); //data.data[i].header
+                            // 评论人昵称
+                            var $commentsName = $("#comments_name"); //data.data[i].nickname
+                            // 评论时间
+                            var $commentsTime = $("#comments_time"); //data.data[i].timestamp
+                            // 评论内容
+                            var $commentsContent = $("#comments_content"); //data.data[i].contents
+                            // 评论图片
+                            var $commentsImg = $("#comments_img"); //data.data[i].imageUrl[j]        
+                            var str7 = "";
+                            // 判断图片数量，确定显示方式，拼接标签
+                            for (var i = 1; i < dataLength; i++) {
+                                str7 += `<div id="comments_box" class="comments "><div class="comments_person">
+                            <!-- 评论头像 -->
+                            <div id="user_avatar" class="user_avatar ">
+                                <img id="follow_avatar" class="avatar " src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[i].header + `" alt="">
+                            </div>
+                            <!-- 评论人昵称 -->
+                            <div id="comments_name" class="comments_name ">
+                                <span>` + data.data[i].nickname + `</span>
+                            </div>
+                            <!-- 评论时间 -->
+                            <div id="comments_time" class="comments_time "><span>` + data.data[i].timestamp + `</span></div>
+                        </div>
+                        <!-- 评论内容 -->
+                        <div id="comments_content" class="comments_content ">` + data.data[i].contents + `</div>
+                        <!-- 评论图片-->
+                        <div id="comments_img" class="comments_img">`;
+                                var CommentsimageUrlLength = data.data[i].imageUrl.length;
+                                var str8 = '';
+                                // 判断每条评论的图片数量
+                                for (var j = 0; j < 1; j++) {
+                                    switch (CommentsimageUrlLength) {
+                                        case 1:
+                                            str8 = `<img  class="comments_imgs comImg_one" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[i].imageUrl[0] + `" alt="">`;
+                                            break;
+                                        case 2:
+                                            for (var z = 0; z < 2; z++) {
+                                                str8 += `<img  class="comments_imgs comImg_two" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[i].imageUrl[z] + `" alt="">`;
+                                            }
+                                            break;
+                                        case 3:
+                                        case 4:
+                                        case 5:
+                                        case 6:
+                                        case 7:
+                                        case 8:
+                                        case 9:
+                                            for (var z = 0; z < CommentsimageUrlLength; z++) {
+                                                str8 += `<img  class="comments_imgs comImg_three" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[i].imageUrl[z] + `" alt="">`;
+                                            }
+                                            break;
+                                        default:
+                                            str8 = "";
+                                    }
+                                    str7 += str8;
+                                }
+                                str7 += `</div>
+                        <div class="clear"></div></div>`;
+                                $comments.html(str7);
+                            }
+                    }
+                }
+            })
+        });

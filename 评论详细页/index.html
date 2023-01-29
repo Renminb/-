@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>评论</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <!--<div class="banner">
+        <div class="banner_img">
+            <img src="./images/back.png" alt="">
+        </div>
+        <div class="banner_title">
+            <span>所有评论</span>
+        </div>
+    </div>-->
+        <div class="page_body">
+            <div class="message">
+                <div class="message_main">
+                    <!-- 留言人信息 -->
+                    <div class="message_head">
+                        <div class="message_head_one">
+                            <!-- 头像 -->
+                            <div id="first_avatar" class="user_avatar">
+                                <img class="avatar" src="./images/u.png" alt="">
+                            </div>
+                            <div class="message_head_person">
+                                <!-- 留言人名字 -->
+                                <div id="message_head_name" class=" message_head_name ">
+                                    <span>小小伊人</span>
+                                </div>
+                                <!-- 留言时间 -->
+                                <div id="message_head_time" class="message_head_time "><span>2023-01-11 12:12:32</span></div>
+                            </div>
+                        </div>
+                        <div class="message_head_line">
+                        </div>
+                    </div>
+                    <!-- 留言内容部分 -->
+                    <div class="message_content ">
+                        <!-- 留言内容 -->
+                        <div id="message_content_word" class="message_content_word ">许下小小愿望 </div>
+                        <!-- 留言图片 -->
+                        <div id="message_content_img" class="message_content_img">
+                        </div>
+                        <div class="reply">
+                            <!-- 回复数量 -->
+                            <span id="message_content_amount" class="message_content_amount ">23</span>
+                            <!-- 回复按键 -->
+                            <span id="message_content_reply" class="message_content_reply ">回复</span>
+                        </div>
+                        <div class="message_content_line ">
+                        </div>
+                    </div>
+
+                    <!-- 留言评论 -->
+                    <div id="comments">
+                        <div id="comments_box" class="comments ">
+                            <div class="comments_person">
+                                <!-- 评论头像 -->
+                                <div id="user_avatar" class="user_avatar ">
+                                    <img id="follow_avatar" class="avatar " src="./images/4.jpg" alt="">
+                                </div>
+                                <!-- 评论人昵称 -->
+                                <div id="comments_name" class="comments_name ">
+                                    <span>小小梦魇</span>
+                                </div>
+                                <!-- 评论时间 -->
+                                <div id="comments_time" class="comments_time "><span>2023-01-14 12:12:32</span></div>
+                            </div>
+                            <!-- 评论内容 -->
+                            <div id="comments_content" class="comments_content ">
+                                回应小小愿望
+                            </div>
+                            <!-- 评论图片-->
+                            <div id="comments_img" class="comments_img" name="">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出层 -->
+    <div id="popup" class="popup">
+        <div class="bg"><img id="showBigImg" src="" alt="" /></div>
+    </div>
+    <div id="popup2" class="popup">
+        <div class="bg"><img id="showBigImg2" src="" alt="" /></div>
+    </div>
+
+    <!-- 获取后台数据 滑动切换图片-->
+    <script src="./js/index.js">
+    </script>
+    <script>
+        function clickJS(arg) {
+            console.log(1);
+        }
+        $("#message_content_reply").click(function() {
+            // window.android.clickJS('Js传过来的参数');
+            clickJS(arg);
+        });
+    </script>
+
+    <!-- 阻止用户手动放大页面 -->
+    <script>
+        // 监听双指放大时间，并阻止
+        document.documentElement.addEventListener('touchmove', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, false);
+    </script>
+</body>
+
+</html>
