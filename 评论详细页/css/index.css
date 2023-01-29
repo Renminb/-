@@ -60,6 +60,7 @@ img {
 .page_body {
     margin-top: 2vw;
     display: flex;
+    z-index: -1;
 }
 
 .message {
@@ -280,6 +281,7 @@ img {
     width: 100%;
     height: 100%;
     text-align: center;
+    z-index: 2;
     display: none;
 }
 
@@ -287,7 +289,7 @@ img {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
-    /* z-index: 100; */
+    z-index: 3;
 }
 
 .popup img {
@@ -301,4 +303,5 @@ img {
     bottom: 0;
     right: 0;
     /*以上三行实现垂直居中*/
+    z-index: 4;
 }

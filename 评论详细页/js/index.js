@@ -8,6 +8,7 @@
          success: function(data) { //请求成功完成后要执行的方法 
              // 留言人头像1
              // 获取第一个头像的div
+
              var $firstAvatar = $("#first_avatar");
              // 存储数据的变量 
              var str1 = "";
@@ -75,14 +76,37 @@
                  $(this).click(function(event) { //点击图片事件发生时，获得到当前图片
                      event = event || window.event;
                      var target = document.elementFromPoint(event.clientX, event.clientY);
-                     showBig(target.src, index); //调用showBig函数并传递两个参数，一个是当前图片的src，一个是当前图片的index值
+                     var scroll = $(window).scrollTop();
+                     showBig(target.src, index, scroll); //调用showBig函数并传递两个参数，一个是当前图片的src，一个是当前图片的index值
                  });
                  //放大展示留言的图片
-                 function showBig(src, index) {
+
+
+                 function showBig(src, index, scroll) {
                      $("#popup img").attr("src", src); // 修改弹出层中img的src以放大显示当前被点击的图片
                      $("#popup").css({
                          "display": "block" //将弹出层显示出来
                      });
+                     //  console.log(scroll);
+                     $("html,body").css({
+                         "position": "fixed",
+                         "top": -scroll,
+                         "left": "50vw"
+                     }); //相对于窗口定位弹窗，距离顶部的距离等于页面滚动的距离，这样就不会出现点击回到顶部的情况
+                     $("#popup").click(function() { //再次点击弹出层，隐藏掉
+                         $("#popup").css({
+                             "display": "none"
+                         });
+                         $("#showBigImg").attr("src", "");
+                         $("html,body").css({
+                             "position": "", //去除相对于窗口的定位     
+                             "top": "",
+                             "left": ""
+                         });
+                         $(window).scrollTop(scroll); //恢复浏览器原来的滚动距离
+
+                     });
+
                      // 监听滑动屏幕事件，x值减小，index++；x值增加，index--；
                      // touchmove的最后坐标减去touchstart的起始坐标，X的结果如果正数，则说明手指是从左往右划动；X的结果如果负数，则说明手指是从右往左划动；Y的结果如果正数，则说明手指是从上往下划动；Y的结果如果负数，则说明手指是从下往上划动。
                      //popup 是需要左右滑动的元素类名
@@ -122,12 +146,7 @@
                      });
                  }
              });
-             $("#popup").click(function() { //再次点击弹出层，隐藏掉
-                 $("#popup").css({
-                     "display": "none"
-                 });
-                 $("#showBigImg").attr("src", "");
-             });
+
 
 
              // 评论回复数量6
@@ -218,21 +237,36 @@
                              //  var newImgName = $(this).parent("div").attr("name");
                              var newImgName = $(this).parent("div").children("img"); //获取到被点击图片的div中的所有图片
                              var newImgIndex = $(this).index(); //index()函数：如果不给 .index() 方法传递参数，那么返回值就是这个jQuery对象集合中第一个元素相对于其同辈元素的位置
-                             showBig(target.src, newImgIndex, newImgName); //向showBig函数传递参数
+                             var scroll = $(window).scrollTop();
+                             showBig(target.src, newImgIndex, newImgName, scroll); //向showBig函数传递参数
                          });
-                     });
-                     $("#popup2").click(function() {
-                         $("#popup2 ").css({
-                             "display": "none"
-                         });
-                         $("#showBigImg2").attr("src", "");
                      });
 
-                     function showBig(src, newImgIndex, newImgName) { //接收参数，放大图片，并滑动
+
+                     function showBig(src, newImgIndex, newImgName, scroll) { //接收参数，放大图片，并滑动
                          $("#showBigImg2").attr("src", src);
                          $("#popup2").css({
                              "display": "block"
                          });
+                         $("html,body").css({
+                             "position": "fixed",
+                             "top": -scroll,
+                             "left": "50vw"
+                         }); //相对于窗口定位弹窗，距离顶部的距离等于页面滚动的距离，这样就不会出现点击回到顶部的情况
+
+                         $("#popup2").click(function() {
+                             $("#popup2 ").css({
+                                 "display": "none"
+                             });
+                             $("#showBigImg2").attr("src", "");
+                             $("html,body").css({
+                                 "position": "", //去除相对于窗口的定位     
+                                 "top": "",
+                                 "left": ""
+                             });
+                             $(window).scrollTop(scroll); //恢复浏览器原来的滚动距离
+                         });
+
                          $("#popup2").unbind("touchstart").on("touchstart", function(e) { //先解除绑定touchstart：unbind()，再重新绑定touchstart：on()，避免出现累加绑定事件
                              startX = e.originalEvent.changedTouches[0].pageX, //手指X轴起始位置
                                  startY = e.originalEvent.changedTouches[0].pageY; //手指Y轴起始位置
