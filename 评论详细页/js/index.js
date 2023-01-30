@@ -1,4 +1,4 @@
- //  拼接时在所有的upload前面加上http://mirror.aqydt.cn:8072/ydt1.5
+ //  拼接时在所有的upload前面加上
  $(document).ready(function() {
      $.ajax({
          url: "JSON2.json", //同文件夹下的json文件路径
@@ -14,7 +14,7 @@
              var str1 = "";
              // 清空内容 
              $firstAvatar.empty();
-             str1 = `<img  class="avatar" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].header + `" alt="">`;
+             str1 = `<img  class="avatar" src="` + data.data[0].header + `" alt="">`;
              $firstAvatar.html(str1);
 
              // 留言人昵称2
@@ -43,12 +43,12 @@
              var firstImgurlLength = data.data[0].imageUrl.length;
              switch (firstImgurlLength) { //根据留言图片数量，选择不同的排列展示方式
                  case 1:
-                     str5 = `<img id="message_content_imgs" class="message_content_imgs one" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].imageUrl[0] + `" alt="">`;
+                     str5 = `<img id="message_content_imgs" class="message_content_imgs one" src="` + data.data[0].imageUrl[0] + `" alt="">`;
                      $firstPhoto.html(str5);
                      break;
                  case 2:
                      for (var i = 0; i < 2; i++) {
-                         str5 += `<img id="message_content_imgs" class="message_content_imgs two" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].imageUrl[i] + `" alt="">`;
+                         str5 += `<img id="message_content_imgs" class="message_content_imgs two" src="` + data.data[0].imageUrl[i] + `" alt="">`;
                      }
                      $firstPhoto.html(str5);
                      break;
@@ -60,7 +60,7 @@
                  case 8:
                  case 9:
                      for (var i = 0; i < firstImgurlLength; i++) {
-                         str5 += `<img id="message_content_imgs" class="message_content_imgs three" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[0].imageUrl[i] + `" alt="">`;
+                         str5 += `<img id="message_content_imgs" class="message_content_imgs three" src="` + data.data[0].imageUrl[i] + `" alt="">`;
                      }
                      $firstPhoto.html(str5);
                      break;
@@ -181,7 +181,7 @@
                          str7 += `<div id="comments_box" class="comments "><div class="comments_person">
                     <!-- 评论头像 -->
                     <div id="user_avatar" class="user_avatar ">
-                        <img id="follow_avatar" class="avatar " src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[i].header + `" alt="">
+                        <img id="follow_avatar" class="avatar " src="` + data.data[i].header + `" alt="">
                     </div>
                     <!-- 评论人昵称 -->
                     <div id="comments_name" class="comments_name ">
@@ -204,7 +204,7 @@
                                      break;
                                  case 2: //图片有两个
                                      for (var z = 0; z < CommentsimageUrlLength; z++) {
-                                         str8 += `<img id="comments_imgs" class="comments_imgs comImg_two" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[i].imageUrl[z] + `" alt="">`;
+                                         str8 += `<img id="comments_imgs" class="comments_imgs comImg_two" src="` + data.data[i].imageUrl[z] + `" alt="">`;
                                      }
                                      break;
                                  case 3: //图片有三个至九个
@@ -215,7 +215,7 @@
                                  case 8:
                                  case 9:
                                      for (var z = 0; z < CommentsimageUrlLength; z++) {
-                                         str8 += `<img id="comments_imgs" class="comments_imgs comImg_three" src="http://mirror.aqydt.cn:8072/ydt1.5` + data.data[i].imageUrl[z] + `" alt="">`;
+                                         str8 += `<img id="comments_imgs" class="comments_imgs comImg_three" src="` + data.data[i].imageUrl[z] + `" alt="">`;
                                      }
                                      break;
                                  default:
