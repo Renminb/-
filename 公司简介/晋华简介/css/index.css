@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #EDEDED;
+}
+
+a {
+    text-decoration: none;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    color: #676767;
+}
+
+#body {
+    margin: auto 2% auto 2%;
+    padding-bottom: 5%;
+}
+
+#showImg {
+    width: 90%;
+    padding: 1% 5%;
+}
+
+#showImg img {
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+#intro {
+    margin-top: 3%;
+    position: relative;
+}
+
+#introHead {
+    position: relative;
+    height: 26px;
+}
+
+#introL {
+    display: inline-block;
+    width: 38%;
+    height: 2px;
+    border: none;
+    background-color: #CCCCCC;
+    position: absolute;
+    top: 48%;
+    left: 0.5%;
+}
+
+#introH {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#introR {
+    position: absolute;
+    top: 48%;
+    right: 0.5%;
+    display: inline-block;
+    width: 38%;
+    height: 2px;
+    border: none;
+    background-color: #CCCCCC;
+}
+
+#introT {
+    padding-top: 3%;
+}
+
+#introT p,
+#foot {
+    letter-spacing: 1px;
+    font-family: SimSun;
+    line-height: 140%;
+    font-size: 0.75rem;
+    margin: auto 2%;
+}
+
+#linkTo {
+    padding-left: 4%;
+    height: 162px;
+}
+
+#linkToIntro {
+    display: block;
+    position: relative;
+}
+
+#linkText {
+    display: inline-block;
+    position: absolute;
+    top: 22%;
+    left: 20%;
+}
+
+#linkText p {
+    line-height: 180%;
+}
+
+#linkToZizhi {
+    position: relative;
+    display: block;
+}
+
+#linkTo p {
+    font-size: 0.9rem;
+    color: #c2c2c2;
+}
+
+#linkTo a {
+    color: #676767;
+    display: block;
+    cursor: pointer;
+    margin: 1% 0;
+    height: 44%;
+}
+
+#linkDI {
+    position: relative;
+    width: 67px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#linkImg {
+    max-width: 110%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

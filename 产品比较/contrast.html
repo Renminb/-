@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/contrast.css">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="divTable">
+        <table id="table">
+        </table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "userinfo.json", //同文件夹下的json文件路径
+                type: "GET", //请求方式为get
+                dataType: "json", //返回数据格式为json
+                // contentType: "application/json;charset=UTF-8",
+                success: function(data) { //请求成功完成后要执行的方法 
+
+                    //获取jsonTip的div
+                    var $jsontip = $("#table");
+                    //存储数据的变量 
+                    var str = "";
+                    //清空内容 
+                    $jsontip.empty();
+                    for (var i = 0; i < data.data.length; i++) {
+                        str += `<tr>`;
+                        for (var j = 0; j < data.data[i].length; j++) {
+                            str += `<td>` + data.data[i][j] + `</td>`;
+                            // console.log(data.data[i][j]);
+                        }
+                        str += `</tr>`;
+                        console.log(str);
+                    }
+                    //将获取到的json格式数据遍历到div中
+                    // $.each(data, function(infoIndex, info) {
+                    //         strHtml += "姓名：" + info["name"] + "<br>";
+                    //         strHtml += "性别：" + info["sex"] + "<br>";
+                    //         strHtml += "<hr>"
+                    //     })
+                    //显示处理后的数据 
+                    $jsontip.html(str);
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+    <title>北京时代亿信科技股份有限公司</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="showImg"><img src="./images/banner-2.png" alt=""></div>
+        <div id="body">
+            <div id="intro">
+                <div id="introHead">
+                    <hr id="introL" />
+                    <h3 id="introH">公司简介</h3>
+                    <hr id="introR" />
+                </div>
+                <div id="introT">
+                    <p>&nbsp&nbsp北京时代亿信科技股份有限公司（以下简称时代亿信）成立于2003 年，是信息安全整体解决方案的专业提供商，专注于信息安全软件的研发及相关解决方案与技术服务。时代亿信秉承“亿诚于信”的理念，引领中国信息安全技术的发展方向。<br> &nbsp&nbsp时代亿信总部位于北京，下设北京、西安、长春、武汉、长沙、昆明六大研发中心、信创适配中心，并在浙江、上海、江苏、河南、安徽、广东、广西、云南、辽宁、四川、重庆、新疆等地设立 20 余家分公司、办事处。现有员工
+                        400 余人，其中专业技术人员占 70% ，本科及以上学历占 90%。经过十余年的积累，时代亿信形成了一支规模大、实力强、经验丰富的专业团队，潜心钻研具有自主核心技术和知识产权的信息安全产品。
+                        <p style="font-size: 1rem;font-weight:bold;">公司经营范围包括： </p>
+                    </p>
+                    <p>&nbsp&nbsp时代亿信依托首都科技产业优势，专注于安全邮件、密级标志、文档安全、商业秘密防护、移动数据安全、水印与溯源、身份鉴别与访问控制等相关领域的软件研发与技术服务，为客户提供整体的应用安全解决方案。时代亿信在众多行业领域拥有领先的市场占有率，主要服务领域：中央和国家机关、部队军工、运营商、金融等，所有产品均已入围中央政府采购网。<br> &nbsp&nbsp时代亿信是国家信息安全标准委员会成员，是国家高新技术企业、软件企业、北京市认定的科技研究开发机构、商用密码产品定点生产单位和销售许可单位。时代亿信凭借对信息安全行业的深刻理解和丰富的实践经验，多次应邀参与国家发改委、保密局、科技部等国家级项目和研究课题以及信息安全标准制定工作，包括：承担了国家发改委和保密局的“电子文件密级标志应用试点示范工程”，国家发改委信息安全专项“基于PKI的应用安全与资源整合门户”，科技部的“EETrust信息内容安全防护及访问控制系统”、“高性能、全业务统一认证与访问控制系统”、“基于身份的文档防泄密管控平台”等项目。
+                        <br> &nbsp&nbsp 时代亿信坚守品质，追求卓越，将同众多用户一起，关注信息安全未来，探索国家信息安全之道，促进中国信息安全的快速发展。
+                    </p>
+                </div>
+            </div>
+            <div id="linkTo">
+                <a id="linkToIntro" href="intro.html">
+                    <div id="linkDI"><img src="./images/logo-icon.ico" alt="" id="linkImg"></div>
+                    <div id="linkText">
+                        <h4>产品介绍</h4>
+                        <p id="cpName">密级标志 文档安全 安全邮件 亿信通</p>
+                    </div>
+                    <span class="iconfont">&#xeb8a;</span>
+                    <hr id="CPJS" />
+                </a>
+                <div id="linkToZizhi">
+                    <h5>荣誉证书</h5>
+                    <div class="show" id="show">
+                        <div id="certificates">
+                            <div id="certificate">
+                                <img src="./images/zz1.jpg" alt="" id="zzImg">
+                                <p id="zzName">中国保密协会</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz2.jpg" alt="" id="zzImg">
+                                <p id="zzName">商业密码会员</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz3.jpg" alt="" id="zzImg">
+                                <p id="zzName">中关村企业促进会</p>
+                            </div>
+                        </div>
+                        <div id="certificates">
+                            <div id="certificate">
+                                <img src="./images/zz4.jpg" alt="" id="zzImg">
+                                <p id="zzName">西城区科技进步奖</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz5.jpg" alt="" id="zzImg">
+                                <p id="zzName">西城区科技先进单位</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz6.jpg" alt="" id="zzImg">
+                                <p id="zzName">西城区科技进步奖</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ifShow" id="show">
+                        <div id="certificates">
+                            <div id="certificate">
+                                <img src="./images/zz7.jpg" alt="" id="zzImg">
+                                <p id="zzName">高成长企业</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz8.jpg" alt="" id="zzImg">
+                                <p id="zzName">优秀自主创新企业</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz9.jpg" alt="" id="zzImg">
+                                <p id="zzName">质量管理体系认证</p>
+                            </div>
+                        </div>
+                        <div id="certificates">
+                            <div id="certificate">
+                                <img src="./images/zz10.jpg" alt="" id="zzImg">
+                                <p id="zzName">软件企业认证认定</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz11.jpg" alt="" id="zzImg">
+                                <p id="zzName">高新证书</p>
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zz12.jpg" alt="" id="zzImg">
+                                <p id="zzName">AAA信用等级证书</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ifShow" id="show">
+                        <div id="certificates">
+                            <div id="certificate">
+                                <img src="./images/zz13.png" alt="" id="zzImg">
+                                <p id="zzName">信息技术服务管理体系认证</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="trans">
+                        <span id="spans"><img index="0" src="./images/onPoint.png" alt="" id="spanImgs"></span>
+                        <span id="spans"><img index="1" src="./images/outPoint.png" alt=""id="spanImgs"></span>
+                        <span id="spans"><img index="2" src="./images/outPoint.png" alt=""id="spanImgs"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="foot">
+                <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var spans = document.querySelectorAll('#spans');
+        var spanImgs = document.querySelectorAll('#spanImgs');
+        var show = document.querySelectorAll('#show');
+        for (var i = 0; i < spanImgs.length; i++) {
+            spanImgs[i].onclick = function() {
+                for (var j = 0; j < spanImgs.length; j++) {
+                    spanImgs[j].src = './images/outPoint.png';
+                    show[j].className = 'ifShow';
+                }
+                this.src = './images/onPoint.png';
+                var index = this.getAttribute('index');
+
+                for (var z = 0; z < show.length; z++) {
+                    show[z].className = 'ifShow';
+                }
+                show[index].className = 'show';
+            }
+        }
+    </script>
+</body>
+
+</html>

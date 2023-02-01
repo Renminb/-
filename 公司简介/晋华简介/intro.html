@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辽宁晋华科技有限公司</title>
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="outCpName">晋华电子文件密级标志管理系统<br>SLLabel</h3>
+                    <p id="cpIntro" class="outCpIntro">密标管理系统是对涉密信息系统中任意电子文件（包括：文档、图片、音频、视频等）标密、定密、加密的软件。通过将密级标志信息与电子文件进行绑定，确保电子文件在全生命周期内被全程监控；带有密级标志的电子文件不能被非授权访问、不可被非授权修改；通过文件校验机制，可判断文件是否已被篡改；通过对知悉范围的设定，使文件的使用人被限定在指定范围内。 <br>密标管理系统由服务端和客户端两部分组成，服务端系统采用B/S架构，管理员通过Web页面进行用户管理、组织机构管理、策略管理和流程配置管理；客户端系统采用C/S架构，实现密级标志的生成、绑定、读取、验证、修改和解除等功能。</p>
+                </div>
+            </div>
+            <div id="items" class="outItems" index="1">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="outCpName">晋华电子文档安全管理系统<br>EDocSecurity</h3>
+                    <p id="cpIntro" class="outCpIntro">文档安全管理系统是针对涉密信息系统中带有密级标志的电子文件进行权限管控和使用管理的安全防护系统。通过权限控制、使用管理、操作管控、日志审计等功能，实现“事前防护、事中监管、事后审计”的管理机制，全程保护数据安全；确保文件在权限限定的范围内受控；通过对使用者的行为进行审计，确保电子文件的操作内容和文件流向可以被查询和追踪。</p>
+
+                </div>
+            </div>
+            <div id="items" class="outItems" index="2">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="outCpName">晋华运维管理系统<br>OpsMngSystem</h3>
+                    <p id="cpIntro" class="outCpIntro">晋华运维管理系统是涵盖所有通用设备、信创设备的IT运维监控系统，可实现对不同类型设备资产的统一管理，如：网络设备、安全设备、服务器、终端等。系统同时具有绘制拓扑展示、实时监控、异常预警等功能。</p>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var imgUrls = document.querySelectorAll('#introImgs');
+        var imgList = ["./images/cp1.png", "./images/cp2.png", "./images/cp3.png"];
+        for (var p = 0; p <= imgUrls.length; p++) {
+            imgUrls[p].src = imgList[p];
+        }
+    </script>
+    <script>
+        var items = document.querySelectorAll('#items');
+        var introImg = document.querySelectorAll('#introImg');
+        var introIs = document.querySelectorAll('#introImgs');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        // 点击触发函数，替换className
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                // 获取当前被点击的元素的index值（index值是手动附加的一个属性名），getAttribute（）返回指定属性名的属性值
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    introImg[z].className = 'outIntroImg';
+                    introIs[z].className = 'outIntroImgs';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                introImg[index].className = 'onIntroImg';
+                introIs[index].className = 'onIntroImgs';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>
