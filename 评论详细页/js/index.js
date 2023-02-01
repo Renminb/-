@@ -234,7 +234,7 @@
                          $(this).click(function(event) {
                              event = event || window.event;
                              var target = document.elementFromPoint(event.clientX, event.clientY);
-                             //  var newImgName = $(this).parent("div").attr("name");
+                             //  var newImgName = $(this).parent("div").attr("name");//获取父div的name的值
                              var newImgName = $(this).parent("div").children("img"); //获取到被点击图片的div中的所有图片
                              var newImgIndex = $(this).index(); //index()函数：如果不给 .index() 方法传递参数，那么返回值就是这个jQuery对象集合中第一个元素相对于其同辈元素的位置
                              var scroll = $(window).scrollTop();
