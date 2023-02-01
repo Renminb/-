@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/git_securityspec/产品比较/js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            background: #f5f5f5;
+        }
+        
+        input {
+            outline: none;
+        }
+        
+        .body {
+            text-align: center;
+            margin: 2% auto 10% auto;
+            max-width: 98vw;
+        }
+        
+        table {
+            table-layout: fixed;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 2% auto;
+            width: 70%;
+        }
+        
+        table tr td:last-child {
+            width: 15%;
+        }
+        
+        tr:nth-child(2n) {
+            background-color: #e5e5e5
+        }
+        
+        .tHead td {
+            font-size: 1rem;
+        }
+        
+        td {
+            font-size: 0.85rem;
+            color: #383838;
+            border: 1px solid #222222;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            height: 30px;
+        }
+        
+        a {
+            text-decoration: none;
+            /* 去除默认的下划线 */
+            outline: none;
+            /* 去除旧版浏览器的点击后的外虚线框 */
+            color: #000;
+            /* 去除默认的颜色和点击后变化的颜色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="header">文章审核价值评定</div>
+        <div class="body">
+            <table id="table">
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function get() {
+        $.ajax({
+            url: "index.json", //同文件夹下的json文件路径
+            type: "GET", //请求方式为get
+            dataType: "json", //返回数据格式为json
+            // contentType: "application/json;charset=UTF-8",
+            success: function(data) { //请求成功完成后要执行的方法 
+                //获取jsonTip的div
+                var $jsontip = $("#table");
+                //存储数据的变量 
+                var str = "";
+                //清空内容 
+                $jsontip.empty();
+                str = ` <tr class="tHead"> <td> 文件名 </td> <td> 通分价值 </td> <td> 审核 </td> </tr>`;
+                for (var i = 0; i < data.data.length; i++) {
+                    // 拼接数据
+                    str += `<tr>`;
+                    str += `<td>` + `<a href="` + data.data[i].dl_link + `"  target="_blank">` + data.data[i].name + `</a> </td>`;
+                    str += `<td> <input id="coin" type="text" value=""></input> </td>`;
+                    str += `<td>` + `<input type="button" id='check' name="` + data.data[i].id + `" value="审核通过"></input>` + `</td>`;
+                    str += `</tr>`;
+                    // console.log(str);
+                }
+                $jsontip.html(str); //展示数据
+                // 获取id=delete的所有input标签
+                var ipts = $("input[id='check']");
+                for (var j = 0; j < ipts.length; j++) {
+                    ipts[j].onclick = function() {
+                        var id = $(this).attr("name");
+                        var coin = $(this).parent("td").parent("tr").children("td").children("input").val();
+                        console.log(coin);
+                        var uri2 = "/ydt1.5/scheme/del?id=" + id + "&coin=" + coin; //云端用地址
+                        $.ajax({
+                            url: uri2, //同文件夹下的json文件路径
+                            type: "GET", //请求方式为get
+                            dataType: "json", //返回数据格式为json
+                            complete: function(data) { //请求成功完成后要执行的方法，无论成功或失败
+                                window.location.reload();
+                            }
+                        });
+                    }
+                }
+            }
+        })
+    });
+</script>
+
+</html>
