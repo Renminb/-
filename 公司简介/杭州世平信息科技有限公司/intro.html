@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州世平信息科技有限公司</title>
+    <link rel="stylesheet" href="./intro.css">
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="outCpName">数据库保密检查工具</h3>
+                    <p id="cpIntro" class="outCpIntro">
+                        对各类数据库、业务系统的存储内容进行检查。
+                        <br>对各类邮件的标题、正文及附件进行快速精准的检查。 <br>兼容多种云环境，对云数据库、云端存储对象及主流大数据平台进行全方位检查。 <br>采用客户端模式，无需安装，对终端各类文件内容进行检查，上报服务端。 </p>
+                </div>
+            </div>
+            <div id="items" class="outItems" index="1">
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">数据泄露防护系统（DLP）</h3>
+                    <p id="cpIntro" class="outCpIntro">数据泄漏防护系统采用深度内容识别、加密等技术, 对终端、网络、服务端采集、使用、存储、分享、传输、销毁等数据全生命周期的涉敏数据的发现、风评、监控、保护、防护、审计、溯源等功能，降低涉敏数据泄漏概率，提升客户数据安全防护能力。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var items = document.querySelectorAll('#items');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    texts[z].className = 'outTexts';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                texts[index].className = '';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>

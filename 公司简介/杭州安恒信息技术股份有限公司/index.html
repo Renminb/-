@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+    <title>杭州安恒信息技术股份有限公司</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./iconfont.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="showImg"><img src="./images/banner.png" alt=""></div>
+        <div id="body">
+            <div id="intro">
+                <div id="introHead">
+                    <hr id="introL" />
+                    <h3 id="introH">公司简介</h3>
+                    <hr id="introR" />
+                </div>
+                <div id="introT">
+                    <p>&nbsp&nbsp杭州安恒信息技术股份有限公司于2007年成立，一直专注于网络信息安全领域，公司主营业务为网络信息安全产品的研发、生产及销售，并为客户提供专业的网络信息安全服务。公司的产品及服务涉及应用安全、大数据安全、云安全、物联网安全、工业控制安全及工业互联网安全等领域。
+                        <br>>&nbsp&nbsp公司秉承“助力安全中国、助推数字经济”的企业使命，以“诚信正直、成就客户，责任至上，开放创新，以人为本，共同成长”作为企业的价值观，不断提高核心技术创新能力，致力于成为一家具有优秀企业文化和社会责任感的新时代网络信息安全产品和服务提供商。
+                    </p>
+                </div>
+            </div>
+            <div id="linkTo">
+                <a id="linkToIntro" href="intro.html">
+                    <div id="linkDI"><img src="./images/logo.png" alt="" id="linkImg"></div>
+                    <div id="linkText">
+                        <h4>产品介绍</h4>
+                        <p id="cpName">安全网关 Web应用防火墙 </p>
+                    </div>
+                    <span class="iconfont">&#xeb8a;</span>
+                    <hr id="CPJS" />
+                </a>
+                <div id="linkToZizhi">
+                    <h5>荣誉证书</h5>
+                    <div class="show" id="show">
+                        <div id="certificates">
+                            <div id="certificate">
+                                <img src="./images/zizhi.png" alt="" id="zzImg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="foot">
+                <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            </div>
+        </div>
+    </div>
+    <div id="popup">
+        <div class="bg"><img src="" alt="" /></div>
+    </div>
+    <script>
+        //点击预览资质图片
+        $("img[id='zzImg']").each(function(index, obj) {
+            $(this).click(function(event) {
+                event = event || window.event;
+                var target = document.elementFromPoint(event.clientX, event.clientY);
+                showBig(target.src);
+            });
+        });
+        $("#popup").click(function() {
+            $("#popup").css({
+                "display": "none"
+            });
+        });
+
+        function showBig(src) {
+            $("#popup img").attr("src", src);
+            $("#popup").css({
+                "display": "block"
+            });
+        }
+    </script>
+</body>
+
+</html>

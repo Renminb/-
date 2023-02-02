@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京点聚信息技术有限公司</title>
+    <link rel="stylesheet" href="./intro.css">
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="outCpName">点聚OFD阅读器</h3>
+                    <p id="cpIntro" class="outCpIntro">
+                        点聚OFD阅读器（OFDReader)是北京点聚信息技术有限公司基于OFD文件开发的客户端软件，提供了OFD文件的阅读和使用。通过OFD Reader可实现OFD文件的打开、阅读、保存、打印、查找文字、翻页阅读、文件缩放、全屏显示、视图切换、目录查看、缩略图、语义、书签、附件等功能。
+                    </p>
+                </div>
+            </div>
+            <div id="items" class="outItems" index="1">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">点聚OFD转化服务</h3>
+                    <p id="cpIntro" class="outCpIntro">OFD365是点聚提供的一站式OFD版式解决方案，基于浏览 器在线模式，提供OFD的生成、阅读、拆分、加密、解密、导出 、验章等功能。OFD365提供私有化部署，满足内部OFD文件处 理需求。
+                    </p>
+                </div>
+
+            </div>
+            <div id="items" class="outItems" index="2">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">点聚OFD隐写溯源系统</h3>
+                    <p id="cpIntro" class="outCpIntro">点聚OFD隐写溯源系统提供电子文档泄密追溯解决方案。产 品包含隐藏信息嵌入和隐藏信息提取。使用信息提取工具，从打 印纸质文档及其复印件、扫描件或照片中提取嵌入的隐藏信息， 利用隐藏的信息进行追踪溯源。
+                    </p>
+                </div>
+
+            </div>
+            <div id="items" class="outItems" index="3">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">点聚OFD电子签章</h3>
+                    <p id="cpIntro" class="outCpIntro">点聚电子签章系统包括电子签章客户端和电子印章平台两大部分组成；具备三员，三者之间实现相互制约，相互监督；支持采用国密算法对系统日志进行算法签名验证，保证日志的完整性，一旦修改系统需进行预警提示。
+                    </p>
+                </div>
+
+            </div>
+            <div id="items" class="outItems" index="4">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">点聚OFD智能签章平台</h3>
+                    <p id="cpIntro" class="outCpIntro">点聚OFD智能签章平台是一套跨平台的服务端平台系统，提供电子文件的在线签署功能，主要模块包括印模管理、印章管理、规则管理、文档管理、日志管理、证书管理等，可根据文字定位、坐标定位、书签定位等实现自动签章，支持国密签名设备。
+                    </p>
+                </div>
+
+            </div>
+            <div id="items" class="outItems" index="5">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">点聚OFD手写签批</h3>
+                    <p id="cpIntro" class="outCpIntro">点聚OFD手写签批采用专有笔迹平滑算法，有效的清除了笔迹噪点和锯齿，通过获取硬件的压力感应，模拟笔迹的粗细。压力大笔迹粗，压力轻迹细，显示效果可达到钢笔、毛笔的手写书法效果。支持国密SM2算法签名实现手写签名的安全可信。
+                    </p>
+                </div>
+            </div>
+            <div id="items" class="outItems" index="6">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">点聚OFD轻阅读</h3>
+                    <p id="cpIntro" class="outCpIntro">点聚OFD轻阅读服务，提供OFD文件的跨平台无插件阅读能力，实现OFD文件所见即所得，支持跨平台、跨系统、跨浏览器，在不同硬件中实现无差别阅读，实现在浏览器、微信、小程序、钉钉、安卓移动端、iOS移动端均可以正常查看OFD文件。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div></div>
+        <div></div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var items = document.querySelectorAll('#items');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    texts[z].className = 'outTexts';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                texts[index].className = '';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>
