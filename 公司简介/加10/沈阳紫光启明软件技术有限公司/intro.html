@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沈阳紫光启明软件技术有限公司</title>
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+                <div id="introImg" class="onIntroImg"><img src="./cp.png" alt="" id="introImgs" class="onIntroImgs"></div>
+                <div id="texts" class="onTexts">
+                    <h3 id="cpName" class="onCpName">紫盛EAMS电子档案管理系统V9.31</h3>
+                    <p id="cpIntro" class="onCpIntro">&nbsp&nbspEAMS V9.31是凝聚公司多年电子档案管理领域探索、研究与实践成果，充分吸收先进档案管理理念，借鉴档案信息化最佳实践经验研发的最新一代档案管理平台。系统基于当今流行的前后端分离开源框架开发，后台启用ASP.NET Core 3.1架构，集高性能、易维护、可拓展等优点于一身，支持所有主流浏览器和数据库，全面适配国产化应用环境，拥有强大的跨平台、可拓展优势。<br>&nbsp&nbspEAMS V9.31符合国家档案局规定，满足数字档案馆（室）建设的技术要求。系统深入贯彻国家档案局最新法律法规要求，进行数字档案管理的核心功能应用升级，满足档案“收集、管理、保存、利用”的主线业务，支持档案的真实性、完整性、可用性、安全性检测，为各级组织提升日常档案管理工作效率、增强档案信息管理与服务能力、提高综合档案管理水平提供平台支撑。
+                        <br>&nbsp&nbspEAMS V9.31基于文件生命周期理论和知识管理理论，遵循国家档案管理标准规范，本着“管理是基础 利用是根本”的思想，以“平台化可灵活定制”的理念进行设计，采用松耦合方式，将系统功能和实际业务进行分离，通过业务功能定制将二者进行关联，使得系统具有极强的扩展性和生命力，能够满足各行业、各单位不同档案业务的管理需要，适应档案管理模式、数据结构、分类方案、整理规则、机构变革、业务流程等业务因素的种种变化，随时无限扩大档案管理的范围。<br>&nbsp&nbsp在平台化设计思路下，研发人员将EAMS
+                        V9.31设计成一个集档案数据存储、管理、业务定制工具和用户使用的平台软件，提供给实施维护人员根据档案管理规范进行系统业务定制，将用户的档案管理模式和管理思想封装固化到系统内，形成符合最终用户需要的个性化档案管理信息系统。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var imgUrls = document.querySelectorAll('#introImgs');
+        var imgList = ["./cp.png"];
+        console.log(imgUrls);
+        for (var p = 0; p <= imgUrls.length; p++) {
+            imgUrls[p].src = imgList[p];
+            console.log(imgUrls[p].src);
+        }
+    </script>
+    <script>
+        var items = document.querySelectorAll('#items');
+        var introImg = document.querySelectorAll('#introImg');
+        var introIs = document.querySelectorAll('#introImgs');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    introImg[z].className = 'outIntroImg';
+                    introIs[z].className = 'outIntroImgs';
+                    texts[z].className = 'outTexts';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                introImg[index].className = 'onIntroImg';
+                introIs[index].className = 'onIntroImgs';
+                texts[index].className = '';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+    <title>天融信科技集团</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="showImg"><img src="./images/banner.jpg" alt=""></div>
+        <div id="body">
+            <div id="intro">
+                <div id="introHead">
+                    <hr id="introL" />
+                    <h3 id="introH">公司简介</h3>
+                    <hr id="introR" />
+                </div>
+                <div id="introT">
+                    <p>&nbsp&nbsp天融信科技集团（证券代码：002212）创始于1995年，是国内首家网络安全企业，亲历中国网络安全产业的发展历程，如今已从中国第一台自主研发防火墙的缔造者成长为中国领先的网络安全、大数据与云服务提供商。多年来，集团为政府、金融、运营商、能源、卫生、教育、交通、制造等各行业客户提供网络安全产品与服务。未来，天融信将始终以捍卫国家网络空间安全为己任，创新超越，致力于成为民族安全产业的领导者、领先安全技术的创造者和数字时代安全的赋能者。
+                    </p>
+                </div>
+            </div>
+            <div id="linkTo">
+                <a id="linkToIntro" href="intro.html">
+                    <div id="linkDI"><img src="./images/logo.png" alt="" id="linkImg"></div>
+                    <div id="linkText">
+                        <h4>产品介绍</h4>
+                        <p id="cpName">NGFW®下一代防火墙等</p>
+                    </div>
+                    <span class="iconfont">&#xeb8a;</span>
+                    <hr id="CPJS" />
+                </a>
+            </div>
+            <div id="foot">
+                <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            </div>
+        </div>
+    </div>
+    <div id="popup">
+        <div class="bg"><img src="" alt="" /></div>
+    </div>
+    <script>
+        //点击预览资质图片
+        $("img[id='zzImg']").each(function(index, obj) {
+            $(this).click(function(event) {
+                event = event || window.event;
+                var target = document.elementFromPoint(event.clientX, event.clientY);
+                showBig(target.src);
+            });
+        });
+        $("#popup").click(function() {
+            $("#popup").css({
+                "display": "none"
+            });
+        });
+
+        function showBig(src) {
+            $("#popup img").attr("src", src);
+            $("#popup").css({
+                "display": "block"
+            });
+        }
+    </script>
+</body>
+
+</html>

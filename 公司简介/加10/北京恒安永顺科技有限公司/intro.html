@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京恒安永顺科技有限公司</title>
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+                <div id="introImg" class="onIntroImg"><img src="./cp.jpg" alt="" id="introImgs" class="onIntroImgs"></div>
+                <div id="texts" class="onTexts">
+                    <h3 id="cpName" class="onCpName">恒云桌面云平台</h3>
+                    <p id="cpIntro" class="onCpIntro">&nbsp&nbspVOI （Virtual OS Infrastructure）虚拟操作系统基础架构， 从桌面应用交付提升到了OS（操作系统）的标准化与即时分发，与传统的VDI 设计不同之处在于终端对本机系统资源的充分利用不再依靠于GPU 虚拟化与CPU 虚拟化技术，而是直接在I/O 层实现对物理存储介质的数据重定向，以达到虚拟化的操作系统完全工作于本机物理硬件之上，从驱动程序、应用程序到各种设备均不存在远程端口映射关系，而是直接的内部址。因此杜绝于VDI
+                        目前所存在的服务器与网络消耗大及软硬件兼容性问题。
+                        <br>&nbsp&nbsp在云计算时代，桌面虚拟化（VOI）主流的桌面运维管理方式，采用集中管理，分布式计算的方式，既能不依赖网络，断网仍可办公使用，提高办公安全性，又具备良好的外设兼容性，识别各种不同接口外设，同时操作无延迟，并且部署高效灵活、大大降低维护工作量，但不支持移动办公，不支持平板PAD智能手机等终端，适用于要求业务连续性、网络差、有高清/渲染/开发等计算及图形密集型、外设复杂的场景。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var imgUrls = document.querySelectorAll('#introImgs');
+        // var imgList = ["./cp.png"];
+        console.log(imgUrls);
+        for (var p = 0; p <= imgUrls.length; p++) {
+            imgUrls[p].src = imgList[p];
+            console.log(imgUrls[p].src);
+        }
+    </script>
+    <script>
+        var items = document.querySelectorAll('#items');
+        var introImg = document.querySelectorAll('#introImg');
+        var introIs = document.querySelectorAll('#introImgs');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    introImg[z].className = 'outIntroImg';
+                    introIs[z].className = 'outIntroImgs';
+                    texts[z].className = 'outTexts';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                introImg[index].className = 'onIntroImg';
+                introIs[index].className = 'onIntroImgs';
+                texts[index].className = '';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>

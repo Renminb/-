@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鱼易连科技有限公司</title>
+    <link rel="stylesheet" href="./intro.css">
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="outCpName">云视频平台</h3>
+                    <p id="cpIntro" class="outCpIntro">小鱼易连云视频平台采用新一代智能云MCU架构和先进的音视频算法，融合各类音视频资源，基于全球就近接入节点或用户本地部署，为客户提供4K超高清音视频体验。
+                    </p>
+                </div>
+            </div>
+            <div id="items" class="outItems" index="1">
+
+                <div id="texts" class="outTexts">
+                    <h3 id="cpName" class="">教育视频能力中枢</h3>
+                    <p id="cpIntro" class="outCpIntro">采用“云+硬件终端+开发平台+ AI”整体架构，云计算技术和通用虚拟化部署方式，核心技术全部自研，采用专业成熟的音视频算法，实现高清流畅的音视频交互体验，为教育管理机构、学校、教师、学生提供专业的音视频云服务。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var items = document.querySelectorAll('#items');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    texts[z].className = 'outTexts';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                texts[index].className = '';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>武汉达梦数据库股份有限公司</title>
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="outCpName">达梦数据库管理系统（DM8）</h3>
+                    <p id="cpIntro" class="outCpIntro">DM8吸收借鉴当前先进新技术思想与主流数据库产品的优点，融合了分布式、弹性计算与云计算的优势，对灵活性、易用性、可靠性、高安全性等方面进行了大规模改进，多样化架构充分满足不同场景需求，支持超大规模并发事务处理和事务-分析混合型业务处理，动态分配计算资源，实现更精细化的资源利用、更低成本的投入。一个数据库，满足用户多种需求，让用户能更加专注于业务发展。</p>
+                </div>
+                <!-- <span class="iconfont">&#xeb8a;</span> -->
+            </div>
+            <div id="items" class="outItems" index="1">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="">达梦数据交换平台(DMETL)</h3>
+                    <p id="cpIntro" class="outCpIntro">达梦数据交换平台(DMETL)是武汉达梦数据库股份有限公司在数十年数据处理经验的基础上，研制开发的具有自主版权的、商品化的ETL工具。达梦数据交换平台创新地将传统的ETL工具（Extract、Transform、Loading)与分布式消息平台相结合，实现了对数据抽取、传输、整合、以及装载的一站式支持，是构建数据中心、数据仓库、数据交换平台、数据同步复制应用的理想平台，同时也可以作为数据加工处理工具由业务人员直接使用。DMETL采用分布式多执行器架构，支持hadoop、spark以及原生执行器三种数据数据处理模式，适用于各类数据整合、交换以及共享项目，为项目建设和运营提供从数据采集、清洗加工、数据质量检测到快速装载的全面支持。</p>
+                </div>
+                <!-- <span class="iconfont">&#xeb8a;</span> -->
+            </div>
+            <div id="items" class="outItems" index="2">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="">达梦启智对象存储系统</h3>
+                    <p id="cpIntro" class="outCpIntro">达梦启智对象存储系统是面向海量非结构化数据的通用数据存储系统，为用户提供安全可靠的数据存储服务。作为企业的数据存储和流转中心，用户可通过浏览器、SDK等方式高效的访问、存取和管理文件，为上层应用系统和数据分析提供支撑。</p>
+                </div>
+                <!-- <span class="iconfont">&#xeb8a;</span> -->
+            </div>
+
+        </div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var imgUrls = document.querySelectorAll('#introImgs');
+        var imgList = ["./images/cp1.png", "./images/cp2.png", "./images/cp3.png"];
+        for (var p = 0; p <= imgUrls.length; p++) {
+            imgUrls[p].src = imgList[p];
+        }
+    </script>
+    <script>
+        var items = document.querySelectorAll('#items');
+        var introImg = document.querySelectorAll('#introImg');
+        var introIs = document.querySelectorAll('#introImgs');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    introImg[z].className = 'outIntroImg';
+                    introIs[z].className = 'outIntroImgs';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                introImg[index].className = 'onIntroImg';
+                introIs[index].className = 'onIntroImgs';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>

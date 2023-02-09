@@ -194,6 +194,8 @@ img {
 .message_content_amount {
     font-size: 3.5vw;
     margin: 0 2vw 0 2vw;
+    height: 5vw;
+    line-height: 5vw;
 }
 
 .message_content_reply {

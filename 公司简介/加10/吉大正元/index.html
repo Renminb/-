@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+    <title>吉大正元信息技术股份有限公司</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="showImg"><img src="./images/banner.png" alt=""></div>
+        <div id="body">
+            <div id="intro">
+                <div id="introHead">
+                    <hr id="introL" />
+                    <h3 id="introH">公司简介</h3>
+                    <hr id="introR" />
+                </div>
+                <div id="introT">
+                    <p>&nbsp&nbsp吉大正元信息技术股份有限公司是中国领先的信息安全专业服务提供商，成立于1999年2月，以吉林大学为发起人。<br> &nbsp&nbsp吉大正元是国家密码管理局认定的首批商用密码产品生产定点单位和销售许可单位，国内领先的公钥基础设施（PKI）产品供应商和安全服务商。以密码技术为核心，打造安全基础类、应用安全支撑类、安全应用类、行业应用类安全产品及服务，为客户提供涵盖安全基础建设、数据安全、移动互联安全、等分级保护、云计算安全、物联网安全等不同领域的整体安全解决方案。
+                    </p>
+                </div>
+            </div>
+            <div id="linkTo">
+                <a id="linkToIntro" href="intro.html">
+                    <div id="linkDI"><img src="./images/logo.png" alt="" id="linkImg"></div>
+                    <div id="linkText">
+                        <h4>产品介绍</h4>
+                        <p id="cpName">密码综合服务管理平台等</p>
+                    </div>
+                    <span class="iconfont">&#xeb8a;</span>
+                    <hr id="CPJS" />
+                </a>
+                <div id="linkToZizhi">
+                    <h5>荣誉证书</h5>
+                    <div class="show" id="show">
+                        <div id="certificates">
+                            <div id="certificate">
+                                <img src="./images/zizhi1.png" alt="" id="zzImg">
+                            </div>
+                            <div id="certificate">
+                                <img src="./images/zizhi2.png" alt="" id="zzImg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="foot">
+                <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            </div>
+        </div>
+    </div>
+    <div id="popup">
+        <div class="bg"><img src="" alt="" /></div>
+    </div>
+    <script>
+        //点击预览资质图片
+        $("img[id='zzImg']").each(function(index, obj) {
+            $(this).click(function(event) {
+                event = event || window.event;
+                var target = document.elementFromPoint(event.clientX, event.clientY);
+                showBig(target.src);
+            });
+        });
+        $("#popup").click(function() {
+            $("#popup").css({
+                "display": "none"
+            });
+        });
+
+        function showBig(src) {
+            $("#popup img").attr("src", src);
+            $("#popup").css({
+                "display": "block"
+            });
+        }
+    </script>
+</body>
+
+</html>

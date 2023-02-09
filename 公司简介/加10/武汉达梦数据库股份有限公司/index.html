@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+    <title>武汉达梦数据库股份有限公司</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="showImg"><img src="./images/banner.jpg" alt=""></div>
+        <div id="body">
+            <div id="intro">
+                <div id="introHead">
+                    <hr id="introL" />
+                    <h3 id="introH">公司简介</h3>
+                    <hr id="introR" />
+                </div>
+                <div id="introT">
+                    <p>&nbsp&nbsp武汉达梦数据库股份有限公司成立于2000年，是国内领先的数据库产品开发服务商，国内数据库基础软件产业发展的关键推动者。公司为客户提供各类数据库软件及集群软件、云计算与大数据等一系列数据库产品及相关技术服务，致力于成为国际顶尖的全栈数据产品及解决方案提供商。<br>&nbsp&nbsp多年来，公司始终坚持原始创新、独立研发的技术路线。目前，公司已掌握数据管理与数据分析领域的核心前沿技术，拥有主要产品全部核心源代码的自主知识产权.自成立以来，达梦数据先后完成并获得数十项国家级或省部级科研开发项目与奖项，逐渐成长为国内数据库行业的领先企业。
+                    </p>
+                </div>
+            </div>
+            <div id="linkTo">
+                <a id="linkToIntro" href="intro.html">
+                    <div id="linkDI"><img src="./images/logo.png" alt="" id="linkImg"></div>
+                    <div id="linkText">
+                        <h4>产品介绍</h4>
+                        <p id="cpName">达梦数据库管理系统等</p>
+                    </div>
+                    <span class="iconfont">&#xeb8a;</span>
+                    <hr id="CPJS" />
+                </a>
+            </div>
+            <div id="foot">
+                <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            </div>
+        </div>
+    </div>
+    <div id="popup">
+        <div class="bg"><img src="" alt="" /></div>
+    </div>
+    <script>
+        //点击预览资质图片
+        $("img[id='zzImg']").each(function(index, obj) {
+            $(this).click(function(event) {
+                event = event || window.event;
+                var target = document.elementFromPoint(event.clientX, event.clientY);
+                showBig(target.src);
+            });
+        });
+        $("#popup").click(function() {
+            $("#popup").css({
+                "display": "none"
+            });
+        });
+
+        function showBig(src) {
+            $("#popup img").attr("src", src);
+            $("#popup").css({
+                "display": "block"
+            });
+        }
+    </script>
+</body>
+
+</html>

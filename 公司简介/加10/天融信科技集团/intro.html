@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天融信科技集团</title>
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="body">
+            <div id="items" class="outItems" index="0">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="outCpName">NGFW®下一代防火墙</h3>
+                    <p id="cpIntro" class="outCpIntro">天融信下一代防火墙系统，融入了AI驱动一体化智能检测引擎，并集WAF、僵木蠕、ADS、HTTPS流量检测、高级威胁防护、异常行为分析、DLP等多个安全模块于一身，联动云管端多个网元，最终为用户提供融入AI单点防御、多元智慧协同、云检测赋能的智能、主动、安全“零”死角的综合防护方案。</p>
+                </div>
+                <!-- <span class="iconfont">&#xeb8a;</span> -->
+            </div>
+            <div id="items" class="outItems" index="1">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="">天融信自适应安全防御系统</h3>
+                    <p id="cpIntro" class="outCpIntro">天融信自适应安全防御系统TopAS是一款以工作负载为中心的主机安全产品，融合Gartner提出的自适应安全架构和云工作负载保护平台CWPP的核心理念，在主机层面构建统一的安全态势运营平台，为用户提供持续的安全监控、安全分析和快速的响应能力，帮助用户有效预测安全风险，精准感知安全威胁，快速阻断威胁入侵。</p>
+                </div>
+                <!-- <span class="iconfont">&#xeb8a;</span> -->
+            </div>
+            <div id="items" class="outItems" index="2">
+                <div id="introImg" class="outIntroImg"><img src="" alt="" id="introImgs" class="outIntroImgs"></div>
+                <div id="texts">
+                    <h3 id="cpName" class="">天融信网络数据防泄漏系统</h3>
+                    <p id="cpIntro" class="outCpIntro">天融信网络数据防泄漏系统TopDLP是对敏感数据实施事中、事后全面保护与审计的独立网关类产品，可以对网络传输协议SMTP、http/https、FTP、SMB等以及RESTful接口传输数据进行抓取，基于深度内容识别技术，通过定义关键字、指纹库、数据标识符、权重词典、机器聚类等多种敏感数据规则，对传输数据进行监测，对违规传输行为作出告警、审计、阻断、审批等响应。产品支持纯透明代理、正/反向代理、路由模式等多种部署方式，可应用于IPv4、IPv6、云等多种场景。</p>
+                </div>
+                <!-- <span class="iconfont">&#xeb8a;</span> -->
+            </div>
+        </div>
+        <div id="foot">
+            <p>*免责声明<br> 以上页面商品信息均来自安全一点通合作供应商，其真实性、准确性以及合法性由信息拥有者，即供应商本身负责。</p>
+            <div id="button">
+                <a href="./index.html">返回上一层</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var imgUrls = document.querySelectorAll('#introImgs');
+        var imgList = ["./images/cp1.png", "./images/cp2.png", "./images/cp3.png"];
+        for (var p = 0; p <= imgUrls.length; p++) {
+            imgUrls[p].src = imgList[p];
+        }
+    </script>
+    <script>
+        var items = document.querySelectorAll('#items');
+        var introImg = document.querySelectorAll('#introImg');
+        var introIs = document.querySelectorAll('#introImgs');
+        var texts = document.querySelectorAll('#texts');
+        var cpName = document.querySelectorAll('#cpName');
+        var cpIntro = document.querySelectorAll('#cpIntro');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                for (var j = 0; j < items.length; j++) {
+                    items[j].className = 'outItems';
+                }
+                this.className = 'outItems onItems';
+                var index = this.getAttribute('index');
+                for (var z = 0; z < items.length; z++) {
+                    introImg[z].className = 'outIntroImg';
+                    introIs[z].className = 'outIntroImgs';
+                    cpName[z].className = '';
+                    cpIntro[z].className = 'outCpIntro';
+                }
+                introImg[index].className = 'onIntroImg';
+                introIs[index].className = 'onIntroImgs';
+                cpName[index].className = 'onCpName';
+                cpIntro[index].className = 'onCpIntro';
+            }
+        }
+    </script>
+</body>
+
+</html>
