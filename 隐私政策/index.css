@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.title {
+  padding-top: 4vh;
+  padding-bottom: 4vw;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.text {
+  background-color: #eee;
+  width: 92vw;
+  height: 92vh;
+  resize: none;
+  border: none;
+  overflow: auto;
+  padding: 4vh 4vw;
+}
+.textPoint {
+  text-indent: 15px;
+}
