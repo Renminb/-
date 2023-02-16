@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="/git_securityspec/产品比较/js/jquery.min.js"></script>
+    <script src="/产品比较/js/jquery.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -95,7 +95,7 @@
                     // 拼接数据
                     str += `<tr>`;
                     str += `<td>` + `<a href="` + data.data[i].dl_link + `"  target="_blank">` + data.data[i].name + `</a> </td>`;
-                    str += `<td> <input id="coin" type="text" value=""></input> </td>`;
+                    str += `<td> <select id="coin"> <option value="30">30通币</option> <option value="80">80通币</option> </select> </td>`;
                     str += `<td>` + `<input type="button" id='check' name="` + data.data[i].id + `" value="审核通过"></input>` + `</td>`;
                     str += `</tr>`;
                     // console.log(str);
@@ -106,7 +106,7 @@
                 for (var j = 0; j < ipts.length; j++) {
                     ipts[j].onclick = function() {
                         var id = $(this).attr("name");
-                        var coin = $(this).parent("td").parent("tr").children("td").children("input").val();
+                        var coin = $(this).parent("td").parent("tr").children("td").children("select").val();
                         console.log(coin);
                         var uri2 = "/ydt1.5/scheme/del?id=" + id + "&coin=" + coin; //云端用地址
                         $.ajax({
