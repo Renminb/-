@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background-color: #F4F4F4;
+}
+
+img {
+    vertical-align: top;
+    border: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.page_body {
+    margin-top: 2vw;
+    display: flex;
+    z-index: -1;
+}
+
+.message {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.message_main {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90vw;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2vw 2vw 8vw 2vw;
+}
+
+.message_head {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.message_head_one {
+    display: flex;
+    align-items: center;
+}
+
+
+/* 头像 */
+
+.user_avatar {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+/*  */
+
+.message_head_person {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin-left: 2vw;
+}
+
+.message_head_name {
+    color: #333333;
+    font-size: 4.5vw;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    width: 86vw;
+    margin-top: 1vh;
+    text-indent: 0.5em;
+}
+
+.message_head_time {
+    width: 80vw;
+    color: #999999;
+    font-size: 3vw;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    text-indent: 0.5em;
+}
+
+.message_head_line,
+.message_content_line {
+    width: 90vw;
+    height: 0.2vw;
+    background-color: #ebedf1;
+    margin: 2vw 0 1vw 0;
+}
+
+.message_content {
+    margin: 3vw 1vw 1vw 1vw;
+}
+
+.message_content_word {
+    color: #333333;
+    font-size: 4vw;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    margin-bottom: 4vw;
+    text-indent: 2em;
+}
+
+.message_content_img {
+    position: relative;
+    width: 90vw;
+    margin-bottom: 4vw;
+    /* 去除行内块之间的空白间隙 */
+    font-size: 0;
+}
+
+.one {
+    height: 40vw;
+}
+
+.two {
+    width: 44vw;
+    height: 44vw;
+    margin: 0.5vw;
+}
+
+.three {
+    width: 29vw;
+    height: 29vw;
+    margin: 0.5vw;
+}
+
+.message_content_imgs {
+    display: inline-block;
+}
+
+
+/*弹出层样式*/
+
+.popup {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 2;
+    display: none;
+}
+
+.popup .bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+}
+
+.popup img {
+    max-width: 100%;
+    max-height: 100%;
+    /*以下三行实现垂直居中*/
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /*以上三行实现垂直居中*/
+    z-index: 4;
+}
+
+.animate__animated.animate__zoomIn {
+    --animate-duration: 0.5s;
+}

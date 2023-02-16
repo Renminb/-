@@ -1,0 +1,15 @@
+{
+    "data": {
+        "id": 1,
+        "title": "系统不承认硬盘",
+        "contents": "此类故障比较常见，即从硬盘无法启动，从A盘启动也无法进入C盘，使用CMOS中的自动监测功能也无法发现硬盘的存在。这种故障大都出现在连接 电缆 或IDE口端口上，硬盘本身的故障率很少，可通过重新插拔硬盘电缆或者改换IDE口及电缆等进行替换试验，可很快发现故障的所在。如果新接上的硬盘不承认，还有一个常见的原因就是硬盘上的主从条线，如果硬盘接在IDE的主盘位置，则硬盘必须跳为主盘状，跳线错误一般无法检测到硬盘。",
+        "images": "1.jpg;2.jpg",
+        "issuer": "ford",
+        "issue_date": "2022-07-01 14:37:56",
+        "attention": 50,
+        "supports": 50,
+        "imageUrl": ["./images/1.jpg", "./images/2.jpg", "./images/2.jpg", "./images/2.jpg", "./images/2.jpg", "./images/2.jpg", "./images/2.jpg", "./images/2.jpg", "./images/2.jpg"],
+        "state": 1,
+        "source": "user"
+    }
+}

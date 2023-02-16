@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>评论</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./animate.min.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <div class="page_body">
+            <div class="message">
+                <div class="message_main">
+                    <!-- 留言人信息 -->
+                    <div class="message_head">
+                        <div class="message_head_one">
+                            <div class="message_head_person">
+                                <!-- 留言人名字 -->
+                                <div id="message_head_name" class=" message_head_name ">
+                                    <span>小小伊人</span>
+                                </div>
+                                <div class="message_head_line">
+                                </div>
+                                <!-- 留言时间 -->
+                                <div id="message_head_time" class="message_head_time "><span>2023-01-11 12:12:32</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 留言内容部分 -->
+                    <div class="message_content ">
+
+                        <!-- 留言图片 -->
+                        <div id="message_content_img" class="message_content_img ">
+                        </div>
+                        <!-- 留言内容 -->
+                        <div id="message_content_word" class="message_content_word ">许下小小愿望 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出层 -->
+    <div id="popup" class="popup animate__animated animate__zoomIn">
+        <div class="bg"><img id="showBigImg" class="animate__animated " src="" alt="" /></div>
+    </div>
+
+    <!-- 获取后台数据 滑动切换图片-->
+    <script src="./js/index.js">
+    </script>
+
+    <!-- 阻止用户手动放大页面 -->
+    <script>
+        // 监听双指放大时间，并阻止
+        document.documentElement.addEventListener('touchmove', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, false);
+    </script>
+</body>
+
+</html>
