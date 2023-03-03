@@ -28,7 +28,7 @@
              var $firstTime = $("#message_head_time");
              var str3 = "";
              $firstTime.empty();
-             str3 = `<span>` + data.data[0].timestamp + `</span>`;
+             str3 = `<span>` + data.data[0].timestamp.slice(5, 16) + `</span>`;
              $firstTime.html(str3);
              // 留言内容4
              var $firstContent = $("#message_content_word");
@@ -188,7 +188,7 @@
                         <span>` + data.data[i].nickname + `</span>
                     </div>
                     <!-- 评论时间 -->
-                    <div id="comments_time" class="comments_time "><span>` + data.data[i].timestamp + `</span></div>
+                    <div id="comments_time" class="comments_time "><span>` + data.data[i].timestamp.slice(0, 16) + `</span></div>
                 </div>
                 <!-- 评论内容 -->
                 <div id="comments_content" class="comments_content ">` + data.data[i].contents + `</div>
@@ -306,4 +306,54 @@
              }
          }
      })
+
+     $.ajax({
+         url: "JSON3.json",
+         type: "GET",
+         dataType: "json",
+         // contentType: "application/json;charset=UTF-8",
+         success: function(data) { //请求成功完成后要执行的方法 
+             var $referralCode = $("#referral_code");
+             $referralCode.html(data.data);
+         }
+     })
+
+     //点击弹出下载提示框，并复制内容至剪切板
+     //定义监听事件
+     $("#directions").css('display', 'none');
+     $(function() {
+         //监听标签的点击事件
+         $("#copy_the_referral_code").click(function() {
+             //实例化clipboard
+             var clipboard = new ClipboardJS("#copy_the_referral_code");
+
+             clipboard.on('success', function(e) {
+                 var download_information = confirm("安全一点通“推荐码”已复制，请在“浏览器”中下载APP,进入“我的”-->“设置”中粘贴输入“推荐码”，可获得奖励哟！"); //使用confirm给出选择
+                 if (download_information == true) {
+                     //download
+                     $("#directions").css('display', 'block'); //弹出选择浏览器提示
+                     window.open('https://mirror.aqydt.cn:8443/release/package/ydt_v0.7_inner.apk'); //下载链接
+                 } else {
+                     $("#directions").css('display', 'none'); //弹出选择浏览器提示
+                 }
+                 e.clearSelection(); //取消复制内容的选中状态
+                 clipboard.destroy(); //解决多次执行的问题
+             })
+             clipboard.on('error', function(e) {
+                 var download_information = confirm("安全一点通“推荐码”复制失败，请手动复制后下载，进入“我的”-->“设置”中粘贴输入“推荐码”，可获得奖励哟！");
+                 if (download_information == true) {
+                     $("#directions").css('display', 'block'); //弹出选择浏览器提示
+                     window.open('https://mirror.aqydt.cn:8443/release/package/ydt_v0.7_inner.apk'); //下载链接
+                 } else {
+                     $("#directions").css('display', 'none'); //弹出选择浏览器提示
+                 }
+                 e.clearSelection(); //取消选中状态
+                 clipboard.destroy(); //解决多次执行的问题
+             })
+             $("#directions").click(function() {
+                 $("#directions").css('display', 'none');
+             })
+
+         });
+     });
  });

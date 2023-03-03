@@ -8,18 +8,26 @@
     <title>评论</title>
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/clipboard.min.js"></script>
+
 </head>
 
 <body>
     <div class="page">
-        <!--<div class="banner">
-        <div class="banner_img">
-            <img src="./images/back.png" alt="">
+        <div class="banner">
+            <div class="banner_intro">
+                <img src="./images/back.png" alt="">
+                <span>安全一点通</span>
+            </div>
+            <div class="banner_link">
+                <a href="javascript:void(0)" id="copy_the_referral_code" data-clipboard-action="copy" data-clipboard-target="#referral_code"><span>打开看看</span></a>
+            </div>
         </div>
-        <div class="banner_title">
-            <span>所有评论</span>
+        <div id="directions" class="directions">
+            <img src="./images/arrowhead2.png" alt="">
         </div>
-    </div>-->
+        <span style="display: none" id="id" th;text="${id}"></span>
+        <span style="display: none" id="token" th: text="${token}"></span>
         <div class="page_body">
             <div class="message">
                 <div class="message_main">
@@ -28,7 +36,6 @@
                         <div class="message_head_one">
                             <!-- 头像 -->
                             <div id="first_avatar" class="user_avatar">
-
                             </div>
                             <div class="message_head_person">
                                 <!-- 留言人名字 -->
@@ -37,6 +44,10 @@
                                 </div>
                                 <!-- 留言时间 -->
                                 <div id="message_head_time" class="message_head_time "><span>2023-01-11 12:12:32</span></div>
+                            </div>
+                            <div class="referral_code">
+                                <p>推荐码：</p>
+                                <p id="referral_code">null</p>
                             </div>
                         </div>
                         <div class="message_head_line">
@@ -65,7 +76,6 @@
                             <div class="comments_person">
                                 <!-- 评论头像 -->
                                 <div id="user_avatar" class="user_avatar ">
-
                                 </div>
                                 <!-- 评论人昵称 -->
                                 <div id="comments_name" class="comments_name ">

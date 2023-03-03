@@ -5,10 +5,15 @@
 
 a {
     text-decoration: none;
+    outline: none;
+    color: #fff;
+    display: inline-block;
 }
 
 html {
     background-color: #F4F4F4;
+    /* width: 0;
+    height: 0; */
 }
 
 img {
@@ -20,50 +25,56 @@ img {
     clear: both;
 }
 
-
-/* .banner {
-    background-color: #d5d5d5;
-    border-radius: 10px;
+.banner {
+    background-color: #fff;
+    /* border-radius: 10px; */
     width: 100vw;
-    height: 10vw;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
+    height: 14vw;
     display: flex;
     align-items: center;
-    position: relative;
+    position: fixed;
+    left: 0%;
+    z-index: 2;
+    color: #4a4a4a;
+    font-size: 4.5vw;
+    font-family: STKaiti;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-.banner_img {
+.banner_intro {
     display: flex;
-    height: 3.5vw;
-    width: 2.5vw;
     align-items: center;
     margin-left: 3vw;
 }
 
-.banner_img img {
-    height: 3.5vw;
-    width: 2.5vw;
+.banner_intro img {
+    height: 10vw;
+    width: 10vw;
 }
 
-.banner_title {
+.banner_link {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    color: #4a4a4a;
-    font-size: 4.5vw;
-    font-family: SimHei;
-    font-weight: NaN;
-    white-space: nowrap;
-} */
+    right: 5%;
+}
+
+.banner_link a {
+    width: 24vw;
+    height: 8vw;
+    line-height: 8vw;
+    text-align: center;
+    border-radius: 4vw;
+    background-image: linear-gradient( 135deg, #c9f0bc 10%, #1c4317 100%);
+    /* background-image: linear-gradient( 135deg, #a5241b 10%, #2c600f 100%); */
+}
 
 .page_body {
-    margin-top: 2vw;
     display: flex;
     z-index: -1;
 }
 
 .message {
+    margin-top: 2vw;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
@@ -71,6 +82,7 @@ img {
 
 .message_main {
     position: absolute;
+    top: 8vh;
     left: 50%;
     transform: translate(-50%, 0);
     width: 90vw;
@@ -112,12 +124,12 @@ img {
 }
 
 
-/*  */
+/* 发布人信息 */
 
 .message_head_person {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 46vw;
     margin-left: 2vw;
 }
 
@@ -129,11 +141,25 @@ img {
 }
 
 .message_head_time {
-    width: 80vw;
+    /* width: 80vw; */
     color: #999999;
     font-size: 3vw;
     font-family: SourceHanSansCN-Medium;
     font-weight: 500;
+}
+
+
+/* 推荐码 */
+
+.referral_code {
+    height: 10vw;
+    color: #ff0000;
+    font-size: 3.5vw;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    float: right;
+    display: flex;
+    align-items: flex-end;
 }
 
 .message_head_line,
@@ -306,4 +332,18 @@ img {
     right: 0;
     /*以上三行实现垂直居中*/
     z-index: 4;
+}
+
+.directions {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(153, 153, 153, 0.7);
+    position: fixed;
+    z-index: 5;
+}
+
+.directions img {
+    position: absolute;
+    left: 50%;
 }

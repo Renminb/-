@@ -1,0 +1,42 @@
+第一页
+"data": [
+        {
+            "id": 1,
+            "name": "密级标志产品",
+            "header": "http://mirror.aqydt.cn:8072/ydt1.5/upload/goodsClassify/cp1.png"
+
+        },
+        {
+            "id": 2,
+            "name": "文档安全产品",
+            "header": "http://mirror.aqydt.cn:8072/ydt1.5/upload/goodsClassify/cp2.png"
+        },
+        {
+            "id": 3,
+            "name": "安全邮件产品","header": "http://mirror.aqydt.cn:8072/ydt1.5/upload/goodsClassify/cp3.png"
+        }
+    ],
+第二页
+"data": [
+        {
+            "id": 1,
+            "productName": "时代亿信电子文件密级标志管理系统"
+        },
+        {
+            "id": 2,
+            "productName": "北信源电子文件密级标志管理系统"
+        },
+        {
+            "id": 3,
+            "productName": "鼎普电子文件密级标志管理系统"
+        }
+    ],
+第三页
+"data": [
+        {
+            "id": 4,
+            "productName": "时代亿信电子文档安全管理系统",
+            "brandLogo": "",
+            "detail": "时代亿信电子文档安全管理系统是一款电子文件安全保护软件，可实现电子文件的加密集中传输、可控流转、权限控制、跟踪审计等，适用于需要对电子文档进行安全保护和敏感数据防泄露的各类单位。产品秉承“事前加密保护、事中权限控制、事后跟踪审计”的计算机安全系统设计理念，提供了电子文档透明加解密功能、文件细粒度权限控制功能、文档安全交换功能以及日志审计功能，可对电子文件实现全流程加密保护、使用控制和安全审计，最大限度地保护电子文件资源及重要数据信息。"
+        }
+    ],

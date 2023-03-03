@@ -1,0 +1,19 @@
+{
+    "data": [{
+            "id": 1,
+            "name": "密级标志产品",
+            "header": "http://mirror.aqydt.cn:8072/ydt1.5/upload/goodsClassify/server.png"
+
+        },
+        {
+            "id": 2,
+            "name": "文档安全产品",
+            "header": "http://mirror.aqydt.cn:8072/ydt1.5/upload/goodsClassify/cp2.png"
+        },
+        {
+            "id": 3,
+            "name": "安全邮件产品",
+            "header": "http://mirror.aqydt.cn:8072/ydt1.5/upload/goodsClassify/cp3.png"
+        }
+    ]
+}
